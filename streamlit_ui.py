@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import uuid
 import os
 from dotenv import load_dotenv
 from services.logger_service import get_logger
