@@ -2,6 +2,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
+from typing import Optional
 from uuid import uuid4
 import uvicorn
 from interview_service import InterviewSession
@@ -9,6 +10,7 @@ from services.logger_service import get_logger
 
 app = FastAPI(title="Interview Session API")
 
+interview_params = {}
 sessions = {}
 
 logger = get_logger("main")
@@ -22,6 +24,15 @@ class ResponseRequest(BaseModel):
     session_id: str
     user_input: str
 
+class ParamRequest(BaseModel):
+    interview_topic : str
+    description : Optional[str] = None
+
+@app.get("/set_params")
+async def set_params(request: ParamRequest):
+    interview_params["topic"] = request.interview_topic
+    interview_params["description"] = request.description
+    return {"message" : "Interview Set."}
 
 @app.post("/interview")
 async def start_interview(request: InterviewRequest):
@@ -41,7 +52,7 @@ async def handle_response(request: ResponseRequest):
 
     session["history"].append({"role": "user", "content" : request.user_input})
     logger.info(f"Received user input for session {request.session_id}: {request.user_input}")
-    interview_session = InterviewSession(session)
+    interview_session = InterviewSession(session, interview_params)
     try:
         response_gen = await interview_session.generate_response(request)
         logger.info(f"Streaming response for session {request.session_id}")

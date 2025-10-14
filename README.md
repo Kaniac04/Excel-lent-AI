@@ -1,6 +1,6 @@
 # Excel-lent AI Interview Platform
 
-An AI-powered technical interview platform specifically designed to assess Microsoft Excel skills through interactive conversations.
+An AI-powered technical interview platform specifically designed to assess any interview-concept skills through interactive conversations.
 
 ## System Requirements
 

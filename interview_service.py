@@ -11,10 +11,12 @@ logger = get_logger("interview_service")
 introductory_line = "welcome to the interview! Please introduce yourself."
 
 class InterviewSession:
-    def __init__(self, session):
+    def __init__(self, session, interview_params):
         self.session = session
         self.sudden_death = False
         self.sudden_death_counter = 0
+        self.interview_topic = interview_params["topic"]
+        self.topic_description = interview_params["description"] if interview_params["description"] is not None else None
 
     async def summarise_history(self):
         if len(self.session["history"]) > 5:
@@ -38,7 +40,7 @@ class InterviewSession:
 
     async def get_web_context(self, question):
         try:
-            web_context = await search_and_extract("Microsoft Excel question : " + question)
+            web_context = await search_and_extract(f"{self.interview_topic} question : " + question)
             logger.info("Web context successfully retrieved.")
         except Exception as e:
             logger.error(f"Web search failed: {e}")
@@ -47,7 +49,7 @@ class InterviewSession:
         return web_context
 
     async def guardrail_input(self, user_input, preface):
-        guardrail_prompt = f"/think You are a content filter. Only allow responses that are relevant to a technical interview about Microsoft Excel. If the input is off-topic respond only with 'INVALID_INPUT'. Otherwise, respond only with 'VALID_INPUT'. Use the interview preface to get the context of the conversation and compare it to the user's input.\nInterview Preface: {preface}\nUser Input: {user_input}"
+        guardrail_prompt = f"/think You are a content filter. Only allow responses that are relevant to a technical interview about {self.interview_topic}. If the input is off-topic respond only with 'INVALID_INPUT'. Otherwise, respond only with 'VALID_INPUT'. Use the interview preface to get the context of the conversation and compare it to the user's input.\nInterview Preface: {preface}\nUser Input: {user_input}"
         validation = ""
         async for token in stream_llm_response(
             guardrail_prompt,
@@ -100,7 +102,8 @@ class InterviewSession:
         async def response_generator():
             system_prompt = INTERVIEWER_SYSTEM_PROMPT.replace("<<history>>", str(self.session["history"])) \
                                                     .replace("<<interviewer_question>>", prev_question) \
-                                                    .replace("<<context>>", web_context)
+                                                    .replace("<<context>>", web_context) \
+                                                    .replace("<<interview_topic>>", self.interview_topic)
             logger.debug(f"System prompt prepared for LLM.")
             async for token in stream_llm_response(
                 prompt,
