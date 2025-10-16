@@ -6,19 +6,19 @@ load_dotenv()
 
 tavily = AsyncTavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 logger = get_logger("tavily_web_search")
-allowed_domains = [
-    "support.microsoft.com",
-    "learn.microsoft.com",
-    "excel-easy.com",
-    "w3schools.com",
-    "gcfglobal.org",
-    "trumpexcel.com",
-    "excel-practice-online.com",
-    "excelexercises.com",
-    "simplilearn.com",
-    "corporatefinanceinstitute.com",
-    "datacamp.com"
-]
+# allowed_domains = [
+#     "support.microsoft.com",
+#     "learn.microsoft.com",
+#     "excel-easy.com",
+#     "w3schools.com",
+#     "gcfglobal.org",
+#     "trumpexcel.com",
+#     "excel-practice-online.com",
+#     "excelexercises.com",
+#     "simplilearn.com",
+#     "corporatefinanceinstitute.com",
+#     "datacamp.com"
+# ]
 
 async def search_and_extract(query, top_k=3):
     """
@@ -30,8 +30,8 @@ async def search_and_extract(query, top_k=3):
         query = query[:400]  
         logger.info("Query truncated to 400 characters.")
     search_kwargs = {"query": query, "max_results": top_k}
-    if allowed_domains:
-        search_kwargs["include_domains"] = allowed_domains
+    # if allowed_domains:
+    #     search_kwargs["include_domains"] = allowed_domains
 
     try:
         results = await tavily.search(**search_kwargs, search_depth='basic')
