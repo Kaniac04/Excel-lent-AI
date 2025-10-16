@@ -7,6 +7,12 @@ from uuid import uuid4
 import uvicorn
 from interview_service import InterviewSession
 from services.logger_service import get_logger
+from services.connections_service import test_all_services
+from fastapi.staticfiles import StaticFiles
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI(title="Interview Session API")
 
@@ -28,7 +34,7 @@ class ParamRequest(BaseModel):
     interview_topic : str
     description : Optional[str] = None
 
-@app.get("/set_params")
+@app.post("/set_params")
 async def set_params(request: ParamRequest):
     interview_params["topic"] = request.interview_topic
     interview_params["description"] = request.description
@@ -61,7 +67,17 @@ async def handle_response(request: ResponseRequest):
         logger.error(f"Error generating response for session {request.session_id}: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 if __name__ == "__main__":
-    logger.info("Starting FastAPI server...")
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    logger.info("Performing checks...")
+    check_bool,checks = test_all_services(
+        llm_url="http://localhost:1234/v1/models"
+    )
+    if check_bool:
+        logger.info("All services functioning perfectly!")
+        logger.info("Starting FastAPI server...")
+        uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    else:
+        logger.ingo(f"Initial Checks Failed for : {checks}")
+

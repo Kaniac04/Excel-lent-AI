@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel-lent AI Interview</title>
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <div id="background"></div>
+  <header>
+    <h1>Excel-lent AI</h1>
+  </header>
+
+  <main>
+    <section class="general-info">
+      <h2>General Information</h2>
+      <p>
+        Excel-lent AI is a structured interview assistant for skills assessment.
+        It combines FastAPI, local LLMs (Qwen3:8B), and real-time response streaming to create
+        an adaptive interview environment.
+      </p>
+    </section>
+
+    <section class="interview-panel">
+      <h2>Interview Simulator</h2>
+
+      <!-- STEP 1: Topic -->
+      <div class="input-group" id="topicSection">
+        <label>Interview Topic</label>
+        <input type="text" id="topic" placeholder="e.g., Excel formulas" />
+        <label>Description (optional)</label>
+        <textarea id="description" placeholder="Describe focus area (optional)"></textarea>
+        <button id="setParams">Set Topic</button>
+      </div>
+
+      <!-- STEP 2: Name (hidden initially) -->
+      <div class="input-group" id="nameSection" style="display: none;">
+        <label>Candidate Name</label>
+        <input type="text" id="candidateName" placeholder="Enter your name" />
+        <button id="startInterview">Start Interview</button>
+      </div>
+
+      <!-- STEP 3: Chat UI (hidden initially) -->
+      <div id="chatSection" style="display: none;">
+        <div id="chatBox" class="chat-box"></div>
+        <div class="input-group" id="responseBox">
+          <input type="text" id="userInput" placeholder="Type your answer..." />
+          <button id="sendResponse">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Single JS file loaded at the end for proper DOM access -->
+  <script src="script.js?v=3"></script>
+</body>
+</html>
