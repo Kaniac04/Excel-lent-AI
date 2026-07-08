@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="731pt" height="797pt" viewBox="0.00 0.00 731.00 797.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 793.2)">
+<title>ExcelLentAIInterview</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-793.2 727.15,-793.2 727.15,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_interview_flow</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="567.15,-8 567.15,-499.4 715.15,-499.4 715.15,-8 567.15,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="641.15" y="-484.6" font-family="Helvetica,sans-Serif" font-size="12.00">Interview Phases</text>
+</g>
+<!-- User -->
+<g id="node1" class="node">
+<title>User</title>
+<polygon fill="#ff99ff" stroke="black" stroke-width="2" points="442.03,-789.2 342.27,-789.2 342.27,-753.2 442.03,-753.2 442.03,-789.2"/>
+<text xml:space="preserve" text-anchor="middle" x="392.15" y="-767.9" font-family="Helvetica,sans-Serif" font-size="11.00">User (Candidate)</text>
+</g>
+<!-- Frontend -->
+<g id="node2" class="node">
+<title>Frontend</title>
+<polygon fill="#bbbbff" stroke="black" points="432.54,-717.2 351.76,-717.2 351.76,-681.2 432.54,-681.2 432.54,-717.2"/>
+<text xml:space="preserve" text-anchor="middle" x="392.15" y="-702.5" font-family="Helvetica,sans-Serif" font-size="11.00">Frontend</text>
+<text xml:space="preserve" text-anchor="middle" x="392.15" y="-689.3" font-family="Helvetica,sans-Serif" font-size="11.00">(Streamlit UI)</text>
+</g>
+<!-- User&#45;&gt;Frontend -->
+<g id="edge1" class="edge">
+<title>User-&gt;Frontend</title>
+<path fill="none" stroke="black" d="M392.15,-752.9C392.15,-745.61 392.15,-736.93 392.15,-728.74"/>
+<polygon fill="black" stroke="black" points="395.65,-728.82 392.15,-718.82 388.65,-728.82 395.65,-728.82"/>
+</g>
+<!-- Backend -->
+<g id="node3" class="node">
+<title>Backend</title>
+<polygon fill="#bbbbff" stroke="black" points="431.95,-645.2 352.35,-645.2 352.35,-609.2 431.95,-609.2 431.95,-645.2"/>
+<text xml:space="preserve" text-anchor="middle" x="392.15" y="-630.5" font-family="Helvetica,sans-Serif" font-size="11.00">Backend API</text>
+<text xml:space="preserve" text-anchor="middle" x="392.15" y="-617.3" font-family="Helvetica,sans-Serif" font-size="11.00">(FastAPI)</text>
+</g>
+<!-- Frontend&#45;&gt;Backend -->
+<g id="edge2" class="edge">
+<title>Frontend-&gt;Backend</title>
+<path fill="none" stroke="black" d="M392.15,-680.9C392.15,-673.61 392.15,-664.93 392.15,-656.74"/>
+<polygon fill="black" stroke="black" points="395.65,-656.82 392.15,-646.82 388.65,-656.82 395.65,-656.82"/>
+</g>
+<!-- InterviewService -->
+<g id="node4" class="node">
+<title>InterviewService</title>
+<polygon fill="#bbffbb" stroke="black" stroke-width="2" points="447.83,-573.2 336.47,-573.2 336.47,-537.2 447.83,-537.2 447.83,-573.2"/>
+<text xml:space="preserve" text-anchor="middle" x="392.15" y="-558.5" font-family="Helvetica,sans-Serif" font-size="11.00">Interview Service</text>
+<text xml:space="preserve" text-anchor="middle" x="392.15" y="-545.3" font-family="Helvetica,sans-Serif" font-size="11.00">(Core Orchestrator)</text>
+</g>
+<!-- Backend&#45;&gt;InterviewService -->
+<g id="edge3" class="edge">
+<title>Backend-&gt;InterviewService</title>
+<path fill="none" stroke="black" d="M392.15,-608.9C392.15,-601.61 392.15,-592.93 392.15,-584.74"/>
+<polygon fill="black" stroke="black" points="395.65,-584.82 392.15,-574.82 388.65,-584.82 395.65,-584.82"/>
+</g>
+<!-- Session -->
+<g id="node5" class="node">
+<title>Session</title>
+<polygon fill="#ddffdd" stroke="black" points="241.44,-488 128.86,-488 128.86,-414 241.44,-414 241.44,-488"/>
+<text xml:space="preserve" text-anchor="middle" x="185.15" y="-474.1" font-family="Helvetica,sans-Serif" font-size="11.00">Session Mgmt</text>
+<text xml:space="preserve" text-anchor="middle" x="185.15" y="-460.9" font-family="Helvetica,sans-Serif" font-size="11.00">- UUIDs</text>
+<text xml:space="preserve" text-anchor="middle" x="185.15" y="-447.7" font-family="Helvetica,sans-Serif" font-size="11.00">- State</text>
+<text xml:space="preserve" text-anchor="middle" x="185.15" y="-434.5" font-family="Helvetica,sans-Serif" font-size="11.00">- Sudden Death</text>
+<text xml:space="preserve" text-anchor="middle" x="185.15" y="-421.3" font-family="Helvetica,sans-Serif" font-size="11.00">- In-Memory / Redis</text>
+</g>
+<!-- InterviewService&#45;&gt;Session -->
+<g id="edge4" class="edge">
+<title>InterviewService-&gt;Session</title>
+<path fill="none" stroke="black" d="M336.23,-537.52C309.38,-528.48 277.25,-516.09 250.15,-501.2 246.53,-499.21 242.88,-497.03 239.27,-494.73"/>
+<polygon fill="black" stroke="black" points="241.34,-491.91 231.08,-489.27 237.46,-497.73 241.34,-491.91"/>
+</g>
+<!-- ResponsePipeline -->
+<g id="node6" class="node">
+<title>ResponsePipeline</title>
+<polygon fill="#ddffdd" stroke="black" points="392.83,-501.2 259.47,-501.2 259.47,-400.8 392.83,-400.8 392.83,-501.2"/>
+<text xml:space="preserve" text-anchor="middle" x="326.15" y="-487.3" font-family="Helvetica,sans-Serif" font-size="11.00">Response Pipeline</text>
+<text xml:space="preserve" text-anchor="middle" x="326.15" y="-474.1" font-family="Helvetica,sans-Serif" font-size="11.00">- Input Validation</text>
+<text xml:space="preserve" text-anchor="middle" x="326.15" y="-460.9" font-family="Helvetica,sans-Serif" font-size="11.00">- Context Aggregation</text>
+<text xml:space="preserve" text-anchor="middle" x="326.15" y="-447.7" font-family="Helvetica,sans-Serif" font-size="11.00">- History Summarization</text>
+<text xml:space="preserve" text-anchor="middle" x="326.15" y="-434.5" font-family="Helvetica,sans-Serif" font-size="11.00">- Jailbreak Detection</text>
+<text xml:space="preserve" text-anchor="middle" x="326.15" y="-421.3" font-family="Helvetica,sans-Serif" font-size="11.00">- Response Generation</text>
+<text xml:space="preserve" text-anchor="middle" x="326.15" y="-408.1" font-family="Helvetica,sans-Serif" font-size="11.00">- Streaming</text>
+</g>
+<!-- InterviewService&#45;&gt;ResponsePipeline -->
+<g id="edge5" class="edge">
+<title>InterviewService-&gt;ResponsePipeline</title>
+<path fill="none" stroke="black" d="M380.95,-536.86C376.21,-529.52 370.38,-520.48 364.31,-511.08"/>
+<polygon fill="black" stroke="black" points="367.37,-509.38 359.01,-502.88 361.49,-513.18 367.37,-509.38"/>
+</g>
+<!-- Logging -->
+<g id="node12" class="node">
+<title>Logging</title>
+<polygon fill="#eeeeee" stroke="black" points="505.59,-469 410.71,-469 410.71,-433 505.59,-433 505.59,-469"/>
+<text xml:space="preserve" text-anchor="middle" x="458.15" y="-447.7" font-family="Helvetica,sans-Serif" font-size="11.00">Logging Service</text>
+</g>
+<!-- InterviewService&#45;&gt;Logging -->
+<g id="edge12" class="edge">
+<title>InterviewService-&gt;Logging</title>
+<path fill="none" stroke="black" d="M403.35,-536.86C413.59,-521.01 428.9,-497.3 440.73,-478.97"/>
+<polygon fill="black" stroke="black" points="443.59,-480.99 446.08,-470.69 437.71,-477.2 443.59,-480.99"/>
+</g>
+<!-- Init -->
+<g id="node13" class="node">
+<title>Init</title>
+<polygon fill="lightgrey" stroke="black" points="653.89,-469 580.41,-469 580.41,-433 653.89,-433 653.89,-469"/>
+<text xml:space="preserve" text-anchor="middle" x="617.15" y="-447.7" font-family="Helvetica,sans-Serif" font-size="11.00">Initialization</text>
+</g>
+<!-- InterviewService&#45;&gt;Init -->
+<g id="edge13" class="edge">
+<title>InterviewService-&gt;Init</title>
+<path fill="none" stroke="black" d="M433.26,-536.78C456.99,-526.61 487.36,-513.41 514.15,-501.2 532.99,-492.61 553.61,-482.84 571.42,-474.27"/>
+<polygon fill="black" stroke="black" points="572.7,-477.55 580.18,-470.05 569.66,-471.24 572.7,-477.55"/>
+</g>
+<!-- Guardrails -->
+<g id="node7" class="node">
+<title>Guardrails</title>
+<polygon fill="#ffffdd" stroke="black" points="182.3,-364.8 0,-364.8 0,-304 182.3,-304 182.3,-364.8"/>
+<text xml:space="preserve" text-anchor="middle" x="91.15" y="-350.9" font-family="Helvetica,sans-Serif" font-size="11.00">Guardrailing System</text>
+<text xml:space="preserve" text-anchor="middle" x="91.15" y="-337.7" font-family="Helvetica,sans-Serif" font-size="11.00">- Topic/Prompt Injection Filtering</text>
+<text xml:space="preserve" text-anchor="middle" x="91.15" y="-324.5" font-family="Helvetica,sans-Serif" font-size="11.00">- Reasoning LLM call for Jailbreak</text>
+<text xml:space="preserve" text-anchor="middle" x="91.15" y="-311.3" font-family="Helvetica,sans-Serif" font-size="11.00">- Terminate on Violation</text>
+</g>
+<!-- ResponsePipeline&#45;&gt;Guardrails -->
+<g id="edge6" class="edge">
+<title>ResponsePipeline-&gt;Guardrails</title>
+<path fill="none" stroke="black" d="M258.99,-405.61C256.03,-403.94 253.07,-402.33 250.15,-400.8 228.69,-389.56 204.86,-378.88 182.32,-369.53"/>
+<polygon fill="black" stroke="black" points="183.7,-366.31 173.12,-365.76 181.05,-372.79 183.7,-366.31"/>
+</g>
+<!-- Summarization -->
+<g id="node8" class="node">
+<title>Summarization</title>
+<polygon fill="#ffffdd" stroke="black" points="343.74,-358.2 200.56,-358.2 200.56,-310.6 343.74,-310.6 343.74,-358.2"/>
+<text xml:space="preserve" text-anchor="middle" x="272.15" y="-344.3" font-family="Helvetica,sans-Serif" font-size="11.00">History Summarization</text>
+<text xml:space="preserve" text-anchor="middle" x="272.15" y="-331.1" font-family="Helvetica,sans-Serif" font-size="11.00">- &gt;5 messages</text>
+<text xml:space="preserve" text-anchor="middle" x="272.15" y="-317.9" font-family="Helvetica,sans-Serif" font-size="11.00">- Non-Reasoning LLM call</text>
+</g>
+<!-- ResponsePipeline&#45;&gt;Summarization -->
+<g id="edge7" class="edge">
+<title>ResponsePipeline-&gt;Summarization</title>
+<path fill="none" stroke="black" d="M302.78,-400.4C297.75,-389.74 292.56,-378.72 287.91,-368.84"/>
+<polygon fill="black" stroke="black" points="291.18,-367.57 283.75,-360.02 284.85,-370.56 291.18,-367.57"/>
+</g>
+<!-- WebContext -->
+<g id="node9" class="node">
+<title>WebContext</title>
+<polygon fill="#ffffdd" stroke="black" points="558.95,-358.2 361.35,-358.2 361.35,-310.6 558.95,-310.6 558.95,-358.2"/>
+<text xml:space="preserve" text-anchor="middle" x="460.15" y="-344.3" font-family="Helvetica,sans-Serif" font-size="11.00">Web Context / Knowledge Expansion</text>
+<text xml:space="preserve" text-anchor="middle" x="460.15" y="-331.1" font-family="Helvetica,sans-Serif" font-size="11.00">- Tavily Top 3 Results</text>
+<text xml:space="preserve" text-anchor="middle" x="460.15" y="-317.9" font-family="Helvetica,sans-Serif" font-size="11.00">- Function Tools or RAG Collections</text>
+</g>
+<!-- ResponsePipeline&#45;&gt;WebContext -->
+<g id="edge8" class="edge">
+<title>ResponsePipeline-&gt;WebContext</title>
+<path fill="none" stroke="black" d="M384.14,-400.4C397.81,-388.72 411.97,-376.6 424.32,-366.04"/>
+<polygon fill="black" stroke="black" points="426.49,-368.79 431.81,-359.64 421.94,-363.47 426.49,-368.79"/>
+</g>
+<!-- LLM -->
+<g id="node10" class="node">
+<title>LLM</title>
+<polygon fill="#eeeeee" stroke="black" points="220.72,-268 143.58,-268 143.58,-232 220.72,-232 220.72,-268"/>
+<text xml:space="preserve" text-anchor="middle" x="182.15" y="-246.7" font-family="Helvetica,sans-Serif" font-size="11.00">LLM Service</text>
+</g>
+<!-- Guardrails&#45;&gt;LLM -->
+<g id="edge9" class="edge">
+<title>Guardrails-&gt;LLM</title>
+<path fill="none" stroke="black" d="M124,-303.65C133.98,-294.62 144.84,-284.78 154.45,-276.09"/>
+<polygon fill="black" stroke="black" points="156.67,-278.8 161.73,-269.49 151.97,-273.61 156.67,-278.8"/>
+</g>
+<!-- Summarization&#45;&gt;LLM -->
+<g id="edge10" class="edge">
+<title>Summarization-&gt;LLM</title>
+<path fill="none" stroke="black" d="M247.08,-310.45C235.36,-299.72 221.38,-286.92 209.4,-275.95"/>
+<polygon fill="black" stroke="black" points="211.95,-273.54 202.21,-269.36 207.22,-278.7 211.95,-273.54"/>
+</g>
+<!-- WebSearch -->
+<g id="node11" class="node">
+<title>WebSearch</title>
+<polygon fill="#eeeeee" stroke="black" points="518.28,-268 402.02,-268 402.02,-232 518.28,-232 518.28,-268"/>
+<text xml:space="preserve" text-anchor="middle" x="460.15" y="-246.7" font-family="Helvetica,sans-Serif" font-size="11.00">Web Search Service</text>
+</g>
+<!-- WebContext&#45;&gt;WebSearch -->
+<g id="edge11" class="edge">
+<title>WebContext-&gt;WebSearch</title>
+<path fill="none" stroke="black" d="M460.15,-310.45C460.15,-300.97 460.15,-289.87 460.15,-279.85"/>
+<polygon fill="black" stroke="black" points="463.65,-279.86 460.15,-269.86 456.65,-279.86 463.65,-279.86"/>
+</g>
+<!-- Intro -->
+<g id="node14" class="node">
+<title>Intro</title>
+<polygon fill="lightgrey" stroke="black" points="659.89,-352.4 586.41,-352.4 586.41,-316.4 659.89,-316.4 659.89,-352.4"/>
+<text xml:space="preserve" text-anchor="middle" x="623.15" y="-331.1" font-family="Helvetica,sans-Serif" font-size="11.00">Introduction</text>
+</g>
+<!-- Init&#45;&gt;Intro -->
+<g id="edge14" class="edge">
+<title>Init-&gt;Intro</title>
+<path fill="none" stroke="black" d="M618.06,-432.59C619.01,-414.4 620.52,-385.55 621.65,-364"/>
+<polygon fill="black" stroke="black" points="625.14,-364.27 622.17,-354.11 618.15,-363.91 625.14,-364.27"/>
+</g>
+<!-- FollowUp -->
+<g id="node15" class="node">
+<title>FollowUp</title>
+<polygon fill="lightgrey" stroke="black" points="695.28,-268 579.02,-268 579.02,-232 695.28,-232 695.28,-268"/>
+<text xml:space="preserve" text-anchor="middle" x="637.15" y="-246.7" font-family="Helvetica,sans-Serif" font-size="11.00">Follow-up Questions</text>
+</g>
+<!-- Intro&#45;&gt;FollowUp -->
+<g id="edge15" class="edge">
+<title>Intro-&gt;FollowUp</title>
+<path fill="none" stroke="black" d="M626.12,-315.93C627.9,-305.44 630.21,-291.84 632.26,-279.8"/>
+<polygon fill="black" stroke="black" points="635.71,-280.39 633.93,-269.94 628.81,-279.21 635.71,-280.39"/>
+</g>
+<!-- Theory -->
+<g id="node16" class="node">
+<title>Theory</title>
+<polygon fill="lightgrey" stroke="black" points="694.75,-196 581.55,-196 581.55,-160 694.75,-160 694.75,-196"/>
+<text xml:space="preserve" text-anchor="middle" x="638.15" y="-174.7" font-family="Helvetica,sans-Serif" font-size="11.00">Theory Assessment</text>
+</g>
+<!-- FollowUp&#45;&gt;Theory -->
+<g id="edge16" class="edge">
+<title>FollowUp-&gt;Theory</title>
+<path fill="none" stroke="black" d="M637.4,-231.7C637.5,-224.41 637.63,-215.73 637.74,-207.54"/>
+<polygon fill="black" stroke="black" points="641.24,-207.67 637.88,-197.62 634.24,-207.57 641.24,-207.67"/>
+</g>
+<!-- Practical -->
+<g id="node17" class="node">
+<title>Practical</title>
+<polygon fill="lightgrey" stroke="black" points="694,-124 586.3,-124 586.3,-88 694,-88 694,-124"/>
+<text xml:space="preserve" text-anchor="middle" x="640.15" y="-102.7" font-family="Helvetica,sans-Serif" font-size="11.00">Practical Problems</text>
+</g>
+<!-- Theory&#45;&gt;Practical -->
+<g id="edge17" class="edge">
+<title>Theory-&gt;Practical</title>
+<path fill="none" stroke="black" d="M638.64,-159.7C638.85,-152.41 639.1,-143.73 639.33,-135.54"/>
+<polygon fill="black" stroke="black" points="642.83,-135.71 639.62,-125.62 635.83,-135.51 642.83,-135.71"/>
+</g>
+<!-- Terminate -->
+<g id="node18" class="node">
+<title>Terminate</title>
+<polygon fill="lightgrey" stroke="black" points="706.93,-52 575.37,-52 575.37,-16 706.93,-16 706.93,-52"/>
+<text xml:space="preserve" text-anchor="middle" x="641.15" y="-30.7" font-family="Helvetica,sans-Serif" font-size="11.00">Termination / Feedback</text>
+</g>
+<!-- Practical&#45;&gt;Terminate -->
+<g id="edge18" class="edge">
+<title>Practical-&gt;Terminate</title>
+<path fill="none" stroke="black" d="M640.4,-87.7C640.5,-80.41 640.63,-71.73 640.74,-63.54"/>
+<polygon fill="black" stroke="black" points="644.24,-63.67 640.88,-53.62 637.24,-63.57 644.24,-63.67"/>
+</g>
+</g>
+</svg>

@@ -1,6 +1,23 @@
-# Excel-lent AI Interview Platform
+<p align="center">
+  <strong>English</strong> | <a href="README.ja.md">日本語</a>
+</p>
 
-An AI-powered technical interview platform specifically designed to assess any interview-concept skills through interactive conversations.
+<h1 align="center">Excel-lent AI Interview Platform</h1>
+
+<p align="center">
+  An AI-powered technical interview platform specifically designed to assess technical skills through interactive conversations.
+</p>
+
+<p align="center">
+  <img src="assets/Excel-lent_AI_Flow.svg" alt="Architecture Diagram" width="900">
+</p>
+
+## Technical Design Document
+
+For a detailed overview of the system architecture, design decisions, and implementation details, see:
+
+- **English:** [Technical Design Document](assets/English_Excel_AI_TDD.md)
+- **日本語:** [設計書](assets/Japanese_Excel_AI_設計書.md)
 
 ## System Requirements
 
